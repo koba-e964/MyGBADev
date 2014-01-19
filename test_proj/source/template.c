@@ -8,8 +8,7 @@
 #include <stdlib.h>
 
 #include "./draw.h"
-#include "./tile0.h"
-
+#include "./tile1.h"
 
 
 //---------------------------------------------------------------------------------
@@ -25,7 +24,7 @@ int main(void) {
 	irqInit();
 	irqEnable(IRQ_VBLANK);
 	
-	drawTile0();
+	drawTile1();
 
 	while (1) {
 		WaitForVsync();
