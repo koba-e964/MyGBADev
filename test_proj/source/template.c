@@ -24,8 +24,8 @@ int main(void) {
 	irqInit();
 	irqEnable(IRQ_VBLANK);
 	
-	drawTile1();
-
+	//drawTile1();
+	drawSprite0();
 	while (1) {
 		WaitForVsync();
 	}
