@@ -27,9 +27,8 @@
 void SpriteMove(u16 num, s16 x, s16 y)
 {
 	OBJATTR* sp = (OBJATTR*)OAM + num;
-
-	if(x<0) x += 512;
-	if(y<0) y += 256;
+	x&=0x01ff;
+	y&=0x00ff;
 
 	sp->attr1 &= 0xfe00;
 	sp->attr0 &= 0xff00;

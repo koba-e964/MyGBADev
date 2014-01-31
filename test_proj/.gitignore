@@ -1,2 +1,4 @@
 source/pic.h
 source/pic.s
+source/spr.h
+source/spr.s
