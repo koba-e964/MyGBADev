@@ -87,4 +87,9 @@ void drawSprite0()
 	SpriteSetChr (0, 2);
 	SpriteMove   (0, 20/*::XCoord*/, 20/*::YCoord*/);
 
+
+	SpriteSetSize(1/*::SpriteID*/, OBJ_SIZE(1), OBJ_SQUARE, OBJ_16_COLOR);
+	SpriteSetChr (1, 2);
+	SpriteMove   (1, 20/*::XCoord*/, 20/*::YCoord*/);
+
 }

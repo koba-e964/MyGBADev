@@ -29,6 +29,7 @@ int main(void) {
 	//drawTile1();
 	drawSprite0();
 	int x=20,y=20; //::XCoord, ::YCoord
+	int moving=0,bx=0;
 	while (1) {
 		volatile int key=REG_KEYINPUT;
 		if(key&KEY_RIGHT){
@@ -43,7 +44,13 @@ int main(void) {
 		if(key&KEY_DOWN){
 			y--;
 		}
+		if(key&KEY_A){
+			y++;
+			moving=1-moving;
+		}
 		SpriteMove(0/*::SpriteId*/,x,y);
+		SpriteMove(1/*::SpriteId*/,bx,y);
+		if(moving)bx++;
 		WaitForVsync();
 	}
 }
