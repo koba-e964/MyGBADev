@@ -75,10 +75,26 @@ void drawSprite0()
 	{
 		oam[i] = sprTiles[i];
 	}
-
-	for(i=0; i<16; i++)
-	{
-		pal[i] = sprPal[i];
+	int cols[]={
+		RGB15_BLACK,
+		RGB15_GRAY,
+		RGB15_SILVER,
+		RGB15_WHITE,
+		RGB15_BLUE ,
+		RGB15_NAVY ,
+		RGB15_TEAL ,
+		RGB15_GREEN ,
+		RGB15_LIME ,
+		RGB15_AQUA ,
+		RGB15_YELLOW ,
+		RGB15_RED ,
+		RGB15_FUCHSIA ,
+		RGB15_OLIVE ,
+		RGB15_PURPLE ,
+		RGB15_MALOON ,
+	};
+	for(i=0;i<16;i++){
+		pal[i]=cols[i];
 	}
 
 	SpriteInit();
