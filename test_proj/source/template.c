@@ -11,7 +11,6 @@
 #include "./draw.h"
 #include "./tile1.h"
 #include "./sprite_common.h"
-#include "./sprite0.h"
 #include "./sprite1.h"
 
 //---------------------------------------------------------------------------------
@@ -30,7 +29,6 @@ int main(void) {
 	//initialization for sprites (project-specific)
 	spriteCommonInit();
 
-	drawSprite0();
 	setTestSprite1();
 	int x=20,y=20; //::XCoord, ::YCoord
 	int moving=0,bx=0;

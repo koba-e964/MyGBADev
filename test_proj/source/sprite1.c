@@ -1,5 +1,5 @@
 #include "sprite1.h"
-#include "sprite0.h"
+#include "sprite_common.h"
 #include <gba_video.h>
 #include  <gba_sprites.h>
 
@@ -62,6 +62,14 @@ void setSprite16x16(char* font,int charId){
 }
 
 void setTestSprite1(){
+	SpriteSetSize(0/*::SpriteID*/, OBJ_SIZE(1), OBJ_SQUARE, OBJ_256_COLOR);
+	SpriteSetChr (0, 0);
+	SpriteMove   (0, 20/*::XCoord*/, 20/*::YCoord*/);
+
+
+	SpriteSetSize(1/*::SpriteID*/, OBJ_SIZE(1), OBJ_SQUARE, OBJ_256_COLOR);
+	SpriteSetChr (1, 8);
+	SpriteMove   (1, 20/*::XCoord*/, 20/*::YCoord*/);
 	setSprite16x16(testSprite1_1,0);
 	setSprite16x16(testSprite1_2,8);
 }
