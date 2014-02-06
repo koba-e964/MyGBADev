@@ -105,12 +105,12 @@ void drawSprite0()
 
 	SpriteInit();
 
-	SpriteSetSize(0/*::SpriteID*/, OBJ_SIZE(1), OBJ_SQUARE, OBJ_16_COLOR);
+	SpriteSetSize(0/*::SpriteID*/, OBJ_SIZE(1), OBJ_SQUARE, OBJ_256_COLOR);
 	SpriteSetChr (0, 2);
 	SpriteMove   (0, 20/*::XCoord*/, 20/*::YCoord*/);
 
 
-	SpriteSetSize(1/*::SpriteID*/, OBJ_SIZE(1), OBJ_SQUARE, OBJ_16_COLOR);
+	SpriteSetSize(1/*::SpriteID*/, OBJ_SIZE(1), OBJ_SQUARE, OBJ_256_COLOR);
 	SpriteSetChr (1, 0);
 	SpriteMove   (1, 20/*::XCoord*/, 20/*::YCoord*/);
 

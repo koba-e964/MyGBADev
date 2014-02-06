@@ -11,7 +11,7 @@
 #include "./draw.h"
 #include "./tile1.h"
 #include "./sprite0.h"
-
+#include "./sprite1.h"
 
 //---------------------------------------------------------------------------------
 // Program entry point
@@ -28,6 +28,7 @@ int main(void) {
 	
 	//drawTile1();
 	drawSprite0();
+	setTestSprite1();
 	int x=20,y=20; //::XCoord, ::YCoord
 	int moving=0,bx=0;
 	volatile int oldkey=~REG_KEYINPUT; //all flags are inverted. low-active -> high-active
