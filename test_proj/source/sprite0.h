@@ -3,8 +3,15 @@
 #include <gba_video.h> //RGB
 
 /*
-	RGB15 : Range [0] [0x7fff]
-	ColorID : Range [0] [15]
+	type RGB15 : [0,0x7fff]
+	type ColorID : [0,15]
+	type XCoord : [0,511]
+	type YCoord : [0,255]
+	type SpriteID : ?
+	type ColorMode : 0 or 1<<13
+	type ShapeMode : [0,2] <<14
+	type SizeMode  : [0,3] <<14
+	type CharID : [0,511]
 */
 
 
@@ -32,6 +39,14 @@
 	SpriteMove :: SpriteID->XCoord->YCoord->IO ()
 */
 void SpriteMove(u16 num, s16 x, s16 y);
+/*
+	SpriteSetSize :: SpriteID->SizeMode->ShapeMode->ColorMode->IO ()
+*/
+void SpriteSetSize(u16 num, u16 size, u16 form, u16 col);
+/*
+	SpriteSetChr :: SpriteID -> CharID ->IO()
+*/
+void SpriteSetChr(u16 num, u16 ch);
 void drawSprite0(void);
 #endif
 

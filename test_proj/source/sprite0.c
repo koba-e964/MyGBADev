@@ -19,6 +19,10 @@
 		type XCoord : [0,511]
 		type YCoord : [0,255]
 		type SpriteID : ?
+		type ColorMode : 0 or 1<<13
+		type ShapeMode : [0,2] <<14
+		type SizeMode  : [0,3] <<14
+		type CharID : [0,511]
 */
 
 /**
@@ -35,21 +39,23 @@ void SpriteMove(u16 num, s16 x, s16 y)
 	sp->attr1 |= (x & 0x01ff);
 	sp->attr0 |= (y & 0x00ff);
 }
-// SpriteSetSize :: SpriteID->Int->?->ColorID->IO ()
+// SpriteSetSize :: SpriteID->SizeMode->ShapeMode->ColorMode->IO ()
 void SpriteSetSize(u16 num, u16 size, u16 form, u16 col)
 {
 	OBJATTR* sp = (OBJATTR*)OAM + num;
-
+	size&=3<<14;
+	form&=3<<14;
+	col&=1<<13;
 	sp->attr0 &= 0x1fff;
 	sp->attr1 &= 0x3fff;
 	sp->attr0 |= col  | form | (160);
 	sp->attr1 |= size | (240);
 }
-// SpriteSetChr :: SpriteID -> ? ->IO()
+// SpriteSetChr :: SpriteID -> CharID ->IO()
 void SpriteSetChr(u16 num, u16 ch)
 {
 	OBJATTR* sp = (OBJATTR*)OAM + num;
-
+	ch &=0x1ff;
 	sp->attr2 &= 0xfc00;
 	sp->attr2 |= ch;
 }
@@ -105,7 +111,7 @@ void drawSprite0()
 
 
 	SpriteSetSize(1/*::SpriteID*/, OBJ_SIZE(1), OBJ_SQUARE, OBJ_16_COLOR);
-	SpriteSetChr (1, 2);
+	SpriteSetChr (1, 0);
 	SpriteMove   (1, 20/*::XCoord*/, 20/*::YCoord*/);
 
 }
