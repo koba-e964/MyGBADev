@@ -11,7 +11,7 @@
 	type ColorMode : 0 or 1<<13
 	type ShapeMode : [0,2] <<14
 	type SizeMode  : [0,3] <<14
-	type CharID : [0,511]
+	type CharID : [0,63] <<3
 */
 
 
